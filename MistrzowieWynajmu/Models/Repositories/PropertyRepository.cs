@@ -7,7 +7,7 @@ using MistrzowieWynajmu.Models.Interfaces;
 
 namespace MistrzowieWynajmu.Models.Repositories
 {
-    public class PropertyRepository:IPropertyRepository
+    public class PropertyRepository : IPropertyRepository
     {
         private readonly DatabaseContext _databaseContext;
 
@@ -15,10 +15,12 @@ namespace MistrzowieWynajmu.Models.Repositories
         {
             _databaseContext = databaseContext;
         }
+
         public List<Property> GetAll()
         {
             return _databaseContext.Properties.ToList();
         }
+
         public Property GetProperty(int propertyId)
         {
             return _databaseContext.Properties
