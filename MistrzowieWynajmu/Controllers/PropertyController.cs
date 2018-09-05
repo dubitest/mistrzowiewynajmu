@@ -78,6 +78,7 @@ namespace MistrzowieWynajmu.Controllers
             return new JsonResult(property.Id);
         }
 
+        [HttpGet("[action]")]
         public IActionResult DeleteProperty(int propertyId)
         {
             if (propertyId <= 0)
