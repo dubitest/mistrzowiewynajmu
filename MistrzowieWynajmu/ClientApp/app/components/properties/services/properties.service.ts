@@ -20,14 +20,10 @@ export class PropertiesService {
     getProperties(): Observable<Property[]> {
         return this.propertiesBackenService.getProperties();
     }
-
-    updateProperty(updateProperty: Property): Observable<Property> {
-        return this.updateProperty(updateProperty);
+    
+    updateProperty(updateProperty: Property): Observable<number> {
+        return this.propertiesBackenService.updateProperty(updateProperty);
     }
-
-    //updateProperty(updateProperty: Property): Observable<number> {
-    //    return this.propertiesBackenService.updateProperty(updateProperty);
-    //}
 
     deleteProperty(propertyId: number): Observable<number> {
         return this.propertiesBackenService.deleteProperty(propertyId);

@@ -11,10 +11,11 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
 //***Properties Section***\\
-import { PropertiesComponent } from './components/property/properties.component';
-import { PropertiesService } from './components/property/services/properties.service';
+import { PropertiesComponent } from './components/properties/components/properties.component';
+import { PropertiesService } from './components/properties/services/properties.service';
 import { PropertiesBackendService } from './services/properties-backend.service';
-import { HttpPropertiesBackendService } from './services/http-properties-backend.service'
+import { HttpPropertiesBackendService } from './services/http-properties-backend.service';
+import { PropertyDetailsComponent } from './components/properties/components/property-details.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpPropertiesBackendService } from './services/http-properties-backend
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
-        PropertiesComponent
+        PropertiesComponent,
+        PropertyDetailsComponent
     ],
     imports: [
         CommonModule,
@@ -36,7 +38,10 @@ import { HttpPropertiesBackendService } from './services/http-properties-backend
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'properties', component: PropertiesComponent },
-            { path: '**', redirectTo: 'home' }
+            { path: 'properties/new-property', component: PropertyDetailsComponent },
+            { path: 'properties/property-details/:id', component: PropertyDetailsComponent },
+            { path: 'properties/property-update/:id', component: PropertyDetailsComponent },
+            { path: '**', redirectTo: 'properties' }
         ])
     ],
     providers: [
